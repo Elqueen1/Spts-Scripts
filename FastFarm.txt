@@ -1,0 +1,231 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local FastTrainGUI = Instance.new("ScreenGui")
+local FastTrainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local btfist = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local btpp = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local bh = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local split = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local UICorner_7 = Instance.new("UICorner")
+local close = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+
+
+
+
+
+
+local Imput = game:GetService("UserInputService")
+Imput.InputBegan:connect(function(inst)
+	if inst.KeyCode == Enum.KeyCode.F2 then
+		game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+		Wait(1.7)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(319,249,842)
+	end
+	if repscript.BackgroundColor3 == Color3.fromRGB(65, 255, 8) then
+		game.Players.LocalPlayer.Character.Head.NameBbGui.NameTxt: Destroy()
+	end
+end)
+
+if game.PlaceId ~= 2202352383 then
+	return
+end
+local d = false
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(input,isTyping)
+	if isTyping then
+		return
+	elseif input.KeyCode == Enum.KeyCode.F1 then
+		pcall(function()
+			local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+			game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+
+			game.Players.LocalPlayer.Character:remove()
+
+			wait(2)
+			if d == true then
+				game.Players.LocalPlayer.Character.ForceField:remove()
+			end
+			game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+
+		end)
+	end
+end)
+
+--Properties:
+
+FastTrainGUI.Name = "FastTrainGUI"
+FastTrainGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+FastTrainFrame.Name = "FastTrainFrame"
+FastTrainFrame.Parent = FastTrainGUI
+FastTrainFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+FastTrainFrame.BackgroundTransparency = 0.500
+FastTrainFrame.Position = UDim2.new(0.0168697275, 0, 0.312871277, 0)
+FastTrainFrame.Size = UDim2.new(0, 100, 0, 267)
+FastTrainFrame.Selectable = true
+FastTrainFrame.Draggable = true
+
+
+UICorner.Parent = FastTrainFrame
+
+TextLabel.Parent = FastTrainFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0, 100, 0, 32)
+TextLabel.Font = Enum.Font.Cartoon
+TextLabel.Text = "FAST TRAIN"
+TextLabel.TextColor3 = Color3.fromRGB(170, 255, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel.TextWrapped = true
+
+UICorner_2.Parent = TextLabel
+
+btfist.Name = "btfist"
+btfist.Parent = FastTrainFrame
+btfist.BackgroundColor3 = Color3.fromRGB(179, 14, 16)
+btfist.Position = UDim2.new(0, 0, 0.161495864, 0)
+btfist.Size = UDim2.new(0, 100, 0, 32)
+btfist.Font = Enum.Font.Cartoon
+btfist.Text = "BT+Fist"
+btfist.TextColor3 = Color3.fromRGB(170, 250, 1)
+btfist.TextSize = 20.000
+btfist.TextWrapped = true
+btfist.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280,281,1008)
+	wait(2)
+	game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+	wait(1)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369,15735,-9)
+	wait(1)
+	local TrainFS = coroutine.create(function()
+		game:GetService("RunService").Heartbeat:Connect(function()
+			game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+FS6"})
+		end)
+	end)
+	coroutine.resume(TrainFS)
+end)
+
+UICorner_3.Parent = btfist
+
+btpp.Name = "btpp"
+btpp.Parent = FastTrainFrame
+btpp.BackgroundColor3 = Color3.fromRGB(179, 14, 16)
+btpp.Position = UDim2.new(0, 0, 0.356587797, 0)
+btpp.Size = UDim2.new(0, 100, 0, 32)
+btpp.Font = Enum.Font.Cartoon
+btpp.Text = "BT+Psychic"
+btpp.TextColor3 = Color3.fromRGB(170, 250, 1)
+btpp.TextSize = 20.000
+btpp.TextWrapped = true
+btpp.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280,281,1008)
+	wait(2)
+	game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+	wait(1)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2557,5416,-498)
+	local TrainPP = coroutine.create(function()
+		game:GetService("RunService").Heartbeat:Connect(function()
+			game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"+PP6"})
+		end)
+	end)
+	coroutine.resume(TrainPP)
+end)
+
+UICorner_4.Parent = btpp
+
+bh.Name = "bh"
+bh.Parent = FastTrainFrame
+bh.BackgroundColor3 = Color3.fromRGB(179, 14, 16)
+bh.Position = UDim2.new(0, 0, 0.554139316, 0)
+bh.Size = UDim2.new(0, 100, 0, 32)
+bh.Font = Enum.Font.Cartoon
+bh.Text = "Black HUB"
+bh.TextColor3 = Color3.fromRGB(170, 250, 1)
+bh.TextSize = 20.000
+bh.TextWrapped = true
+bh.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/de07nz15/Spts-Gui-Scripts/main/BH2", true))()
+end)
+
+
+UICorner_5.Parent = bh
+
+split.Name = "split"
+split.Parent = FastTrainFrame
+split.BackgroundColor3 = Color3.fromRGB(179, 14, 16)
+split.Position = UDim2.new(0, 0, 0.738274872, 0)
+split.Size = UDim2.new(0, 100, 0, 32)
+split.Font = Enum.Font.Cartoon
+split.Text = "Split"
+split.TextColor3 = Color3.fromRGB(170, 250, 1)
+split.TextSize = 20.000
+split.TextWrapped = true
+split.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+end)
+
+UICorner_6.Parent = split
+
+TextLabel_2.Parent = FastTrainFrame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.460000008, 0, 0.880149841, 0)
+TextLabel_2.Size = UDim2.new(0, 54, 0, 32)
+TextLabel_2.Font = Enum.Font.Cartoon
+TextLabel_2.Text = "v1.0"
+TextLabel_2.TextColor3 = Color3.fromRGB(170, 255, 0)
+TextLabel_2.TextSize = 20.000
+TextLabel_2.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel_2.TextWrapped = true
+
+UICorner_7.Parent = TextLabel_2
+
+close.Name = "close"
+close.Parent = FastTrainFrame
+close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0, 0, 0.880149841, 0)
+close.Size = UDim2.new(0, 30, 0, 32)
+close.Font = Enum.Font.Creepster
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(170, 250, 1)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
+close.MouseButton1Down:connect(function()
+	FastTrainFrame.Visible = false
+end)
+
+
+UICorner_8.Parent = close
+
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Made by 1xElqueen",
+	Text = "whiskey#1313", 
+	Duration = 15
+})
+
+wait(1)
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Respawn Keybinds",
+	Text = "F1 and F2", 
+	Duration = 15
+})
+	
+
